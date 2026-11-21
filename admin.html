@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="EventHub administrator dashboard for manager approvals and event management."
+    >
+
+    <title>Admin Dashboard | EventHub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="admin-dashboard-page">
+
+    <!-- Main navigation -->
+    <header class="site-header admin-site-header">
+        <div class="container admin-header-inner">
+
+            <a href="index.html" class="logo admin-logo" aria-label="EventHub home">
+                EventHub<span>.</span>
+            </a>
+
+            <nav class="main-navigation admin-navigation" aria-label="Main navigation">
+                <a href="index.html">Discover</a>
+                <a href="#managerApplications">Manager approvals</a>
+                <a href="#eventManagement">Events</a>
+                <a href="analytics.html">Analytics</a>
+            </nav>
+
+            <div class="header-actions admin-header-actions">
+                <a href="index.html" class="button admin-website-button">
+                    View website
+                </a>
+
+                <button
+                    type="button"
+                    class="button admin-logout-button"
+                    id="adminLogout"
+                >
+                    Log out
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="admin-page">
+
+        <!-- Dashboard introduction -->
+        <section class="admin-page-header">
+            <div class="container admin-intro-inner">
+
+                <div class="admin-intro-copy">
+                    <span class="section-eyebrow">EVENTHUB MANAGEMENT</span>
+
+                    <h1>Admin dashboard</h1>
+
+                    <p>
+                        A central place to review manager applications,
+                        manage events and keep EventHub running smoothly.
+                    </p>
+
+                    <p id="adminWelcome" class="admin-welcome"></p>
+                </div>
+
+                <div class="admin-intro-label" aria-hidden="true">
+                    <span>EH</span>
+                    <small>ADMINISTRATION</small>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Dashboard content -->
+        <div class="container admin-page-content">
+
+            <!-- Manager applications -->
+            <section
+                id="managerApplications"
+                class="admin-management-section"
+            >
+                <div class="admin-section-heading">
+                    <div>
+                        <span class="section-eyebrow">ACCOUNT MANAGEMENT</span>
+                        <h2>Manager applications</h2>
+                        <p>
+                            Review applications and decide who can manage
+                            events on EventHub.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    id="managerDashboardContent"
+                    class="admin-dashboard-panel"
+                >
+                    <p>Loading manager applications...</p>
+                </div>
+            </section>
+
+            <!-- Event management -->
+            <section
+                id="eventManagement"
+                class="admin-management-section"
+            >
+                <div class="admin-section-heading">
+                    <div>
+                        <span class="section-eyebrow">EVENT MODERATION</span>
+                        <h2>Manage all events</h2>
+                        <p>
+                            Review submitted events and manage their
+                            publication status.
+                        </p>
+                    </div>
+
+                    <a href="analytics.html" class="admin-view-link">
+                        View analytics <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <div
+                    id="adminDashboardContent"
+                    class="admin-dashboard-panel"
+                >
+                    <p>Loading events...</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer admin-site-footer">
+        <div class="container admin-footer-inner">
+            <a href="index.html" class="logo admin-footer-logo">
+                EventHub<span>.</span>
+            </a>
+
+            <p>
+                © 2026 EventHub. Discover something worth showing up for.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Load each script only once -->
+    <script src="js/auth.js" defer></script>
+    <script src="js/events.js" defer></script>
+    <script src="js/admin.js" defer></script>
+
+</body>
+</html>

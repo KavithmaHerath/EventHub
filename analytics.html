@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="EventHub platform analytics, event statistics and management insights."
+    >
+
+    <title>Analytics Dashboard | EventHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="analytics-dashboard-page">
+
+    <!-- Header -->
+    <header class="site-header analytics-site-header">
+        <div class="container analytics-header-inner">
+
+            <a href="index.html" class="logo analytics-logo">
+                EventHub<span>.</span>
+            </a>
+
+            <nav class="main-navigation analytics-navigation" aria-label="Main navigation">
+                <a href="index.html">Discover</a>
+                <a href="admin.html#managerApplications">Manager approvals</a>
+                <a href="admin.html#eventManagement">Events</a>
+                <a href="analytics.html" class="active" aria-current="page">
+                    Analytics
+                </a>
+            </nav>
+
+            <div class="analytics-header-actions">
+                <a href="index.html" class="analytics-website-button">
+                    View website
+                </a>
+
+                <a href="admin.html" class="analytics-admin-button">
+                    Admin dashboard
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Main content -->
+    <main class="analytics-page">
+
+        <!-- Page introduction -->
+        <section class="analytics-page-header">
+            <div class="container analytics-intro-inner">
+
+                <div>
+                    <span class="section-eyebrow">
+                        EVENTHUB INSIGHTS
+                    </span>
+
+                    <h1>Analytics dashboard</h1>
+
+                    <p>
+                        Get an overview of EventHub's events,
+                        event categories and manager activity.
+                    </p>
+                </div>
+
+                <div class="analytics-intro-mark" aria-hidden="true">
+                    <span>EH</span>
+                    <small>PLATFORM INSIGHTS</small>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Analytics dashboard -->
+        <section class="container analytics-page-content">
+
+            <div class="analytics-heading-row">
+                <div>
+                    <span class="section-eyebrow">
+                        PLATFORM OVERVIEW
+                    </span>
+
+                    <h2>Performance at a glance</h2>
+
+                    <p>
+                        Explore the current event platform statistics.
+                    </p>
+                </div>
+
+                <a href="admin.html" class="analytics-back-link">
+                    <span aria-hidden="true">←</span>
+                    Back to admin
+                </a>
+            </div>
+
+
+            <!-- JavaScript renders analytics here -->
+            <div
+                id="analyticsDashboardContent"
+                class="analytics-dashboard-content"
+                aria-live="polite"
+            >
+                <p>Loading analytics...</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer analytics-site-footer">
+        <div class="container analytics-footer-inner">
+
+            <a href="index.html" class="logo analytics-footer-logo">
+                EventHub<span>.</span>
+            </a>
+
+            <p>
+                © 2026 EventHub. Discover something worth showing up for.
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/storage.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/analytics.js"></script>
+
+</body>
+</html>

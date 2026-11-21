@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Explore event information, dates, venues, and pricing on EventHub."
+    >
+
+    <meta name="theme-color" content="#f7f6f2">
+
+    <title>Event Details | EventHub</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- ==============================
+         HEADER
+    =============================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="brand" aria-label="EventHub homepage">
+
+                <span class="brand-mark">E</span>
+
+                <span class="brand-name">
+                    event<span>hub</span>
+                </span>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNavigation"
+            >
+
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <nav class="main-navigation" id="mainNavigation">
+
+                <a href="index.html#discover" class="nav-link">
+                    Discover
+                </a>
+
+                <a href="index.html#categories" class="nav-link">
+                    Categories
+                </a>
+
+                <a href="index.html#about" class="nav-link">
+                    About
+                </a>
+
+                <div class="mobile-navigation-actions">
+
+                    <a href="index.html#login" class="mobile-login-link">
+                        Log in
+                    </a>
+
+                    <a href="index.html#organize" class="button button-primary">
+                        Create an event
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <div class="header-actions">
+
+                <a href="index.html#login" class="login-link">
+                    Log in
+                </a>
+
+                <a
+                    href="index.html#organize"
+                    class="button button-primary header-button"
+                >
+                    Create an event
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="event-details-main">
+
+        <!-- ==============================
+             BREADCRUMB
+        =============================== -->
+
+        <section class="details-breadcrumb-section">
+
+            <div class="section-container">
+
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <span aria-hidden="true">/</span>
+
+                    <a href="index.html#featured">Discover events</a>
+
+                    <span aria-hidden="true">/</span>
+
+                    <span aria-current="page">Event details</span>
+
+                </nav>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             EVENT DETAILS CONTENT
+        =============================== -->
+
+        <section class="event-details-section">
+
+            <div class="section-container">
+
+                <!-- JavaScript inserts event information here -->
+
+                <div
+                    class="event-details-loading"
+                    id="eventDetailsLoading"
+                    aria-live="polite"
+                >
+
+                    <div class="loading-indicator"></div>
+
+                    <p>Loading event information...</p>
+
+                </div>
+
+
+                <!-- Invalid event message -->
+
+                <div
+                    class="event-not-found"
+                    id="eventNotFound"
+                    hidden
+                >
+
+                    <div class="empty-state-symbol">!</div>
+
+                    <span class="section-kicker">
+                        EVENT NOT AVAILABLE
+                    </span>
+
+                    <h1>We couldn't find that event.</h1>
+
+                    <p>
+                        The event may have been removed or the link
+                        may be incorrect.
+                    </p>
+
+                    <a
+                        href="index.html#featured"
+                        class="button button-primary"
+                    >
+                        Explore other events
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+
+
+                <!-- Event content generated by JavaScript -->
+
+                <div
+                    class="event-details-content"
+                    id="eventDetailsContent"
+                    hidden
+                >
+
+                    <div class="event-details-layout">
+
+                        <!-- Main event information -->
+
+                        <div class="event-details-main-column">
+
+                            <div class="event-details-image-wrapper">
+
+                                <img
+                                    id="detailImage"
+                                    src=""
+                                    alt=""
+                                >
+
+                                <span
+                                    class="event-details-category"
+                                    id="detailCategory"
+                                ></span>
+
+                            </div>
+
+
+                            <div class="event-details-heading">
+
+                                <span class="section-kicker">
+                                    EVENT INFORMATION
+                                </span>
+
+                                <h1 id="detailTitle"></h1>
+
+                                <p
+                                    class="event-details-location"
+                                    id="detailLocation"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="event-information-block">
+
+                                <h2>About this event</h2>
+
+                                <p id="detailDescription"></p>
+
+                            </div>
+
+
+                            <div class="event-information-block">
+
+                                <h2>Location</h2>
+
+                                <div class="event-venue-information">
+
+                                    <span class="venue-icon">⌖</span>
+
+                                    <div>
+
+                                        <strong id="detailVenue"></strong>
+
+                                        <p id="detailFullLocation"></p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="event-details-actions">
+
+                                <a
+                                    href="index.html#featured"
+                                    class="text-link"
+                                >
+                                    <span aria-hidden="true">←</span>
+                                    Back to all events
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="share-event-button"
+                                    id="shareEventButton"
+                                >
+                                    Share event
+                                    <span aria-hidden="true">↗</span>
+                                </button>
+
+
+<button
+    type="button"
+    class="wishlist-button wishlist-details-button"
+    id="wishlistToggleButton"
+    data-wishlist-toggle
+    aria-pressed="false"
+>
+    <span aria-hidden="true">♡</span>
+    <span class="wishlist-button-label">Save event</span>
+</button>
+
+
+                            </div>
+
+
+                            <p
+                                class="share-feedback"
+                                id="shareFeedback"
+                                role="status"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Event summary panel -->
+
+                        <aside class="event-summary-panel">
+
+                            <span class="section-kicker">
+                                EVENT SUMMARY
+                            </span>
+
+                            <h2>Plan your visit.</h2>
+
+
+                            <div class="summary-item">
+
+                                <span class="summary-icon">◷</span>
+
+                                <div>
+
+                                    <span class="summary-label">
+                                        DATE
+                                    </span>
+
+                                    <strong id="detailDate"></strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="summary-item">
+
+                                <span class="summary-icon">◴</span>
+
+                                <div>
+
+                                    <span class="summary-label">
+                                        TIME
+                                    </span>
+
+                                    <strong id="detailTime"></strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="summary-item">
+
+                                <span class="summary-icon">⌖</span>
+
+                                <div>
+
+                                    <span class="summary-label">
+                                        LOCATION
+                                    </span>
+
+                                    <strong id="detailCity"></strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="summary-item">
+
+                                <span class="summary-icon">◇</span>
+
+                                <div>
+
+                                    <span class="summary-label">
+                                        ENTRY / PRICE
+                                    </span>
+
+                                    <strong id="detailPrice"></strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="summary-divider"></div>
+
+
+                            <p class="summary-note">
+                                Event information shown here is sample
+                                project data. Check with the event
+                                organizer before making plans.
+                            </p>
+
+
+                            <a
+                                href="index.html#featured"
+                                class="button button-primary summary-button"
+                            >
+                                Explore more events
+                                <span aria-hidden="true">↗</span>
+                            </a>
+
+                        </aside>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand-column">
+
+                    <a href="index.html" class="brand footer-brand">
+
+                        <span class="brand-mark">E</span>
+
+                        <span class="brand-name">
+                            event<span>hub</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        Discover experiences.
+                        Connect with people.
+                        Make moments matter.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-link-column">
+
+                    <h3>Explore</h3>
+
+                    <a href="index.html#discover">Discover events</a>
+                    <a href="index.html#categories">Categories</a>
+                    <a href="index.html#featured">Featured events</a>
+
+                </div>
+
+
+                <div class="footer-link-column">
+
+                    <h3>EventHub</h3>
+
+                    <a href="index.html#about">About us</a>
+                    <a href="index.html#organize">For organizers</a>
+                    <a href="index.html#login">Log in</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span> EventHub.
+                    All rights reserved.
+                </p>
+
+                <p class="footer-tagline">
+                    Made for experiences that matter.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript files -->
+
+    <script src="js/storage.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/event-details.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/notifications.js"></script>
+
+</body>
+
+</html>

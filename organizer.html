@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Manage your events with the EventHub organizer dashboard."
+    >
+
+    <title>Organizer Dashboard | EventHub</title>
+
+    <!-- Load the fonts used throughout EventHub. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="organizer-page">
+
+    <!-- Main dashboard navigation -->
+    <header class="site-header organizer-header">
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo" aria-label="EventHub home">
+                Event<span>Hub</span><span class="logo-dot">.</span>
+            </a>
+
+            <nav class="main-navigation" aria-label="Main navigation">
+                <a href="index.html">Discover</a>
+                <a href="account.html">My account</a>
+                <a href="registration.html?view=history">Registrations</a>
+            </nav>
+
+            <div class="header-actions">
+                <a
+                    href="index.html"
+                    class="button button-secondary organizer-header-button"
+                >
+                    View website
+                </a>
+
+                <button
+                    type="button"
+                    class="button button-primary organizer-logout-button"
+                    id="organizerLogout"
+                >
+                    Log out
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="organizer-main">
+
+        <!-- Page introduction and signed-in manager details -->
+        <section class="organizer-heading container">
+
+            <div class="organizer-heading-copy">
+                <p class="eyebrow">EVENT MANAGEMENT</p>
+
+                <h1>
+                    Your events,<br>
+                    <span>all in one place.</span>
+                </h1>
+
+                <p class="organizer-intro">
+                    Create, manage, and keep track of the events
+                    you organise on EventHub.
+                </p>
+            </div>
+
+            <aside class="organizer-welcome">
+                <span class="organizer-welcome-label">
+                    SIGNED IN AS
+                </span>
+
+                <strong id="organizerName">Organizer</strong>
+
+                <span id="organizerEmail"></span>
+            </aside>
+
+        </section>
+
+
+        <section class="organizer-content container">
+
+            <!-- Dashboard overview -->
+            <div class="organizer-stats">
+
+                <article class="organizer-stat">
+                    <span class="organizer-stat-label">
+                        Total events
+                    </span>
+
+                    <strong id="totalEvents">0</strong>
+
+                    <span>Created by you</span>
+                </article>
+
+
+                <article class="organizer-stat">
+                    <span class="organizer-stat-label">
+                        Upcoming events
+                    </span>
+
+                    <strong id="upcomingEvents">0</strong>
+
+                    <span>Scheduled for the future</span>
+                </article>
+
+
+                <article class="organizer-stat">
+                    <span class="organizer-stat-label">
+                        Registrations
+                    </span>
+
+                    <strong id="totalRegistrations">0</strong>
+
+                    <span>Across your events</span>
+                </article>
+
+            </div>
+
+
+            <!-- Event management heading -->
+            <div class="organizer-section-heading">
+
+                <div>
+                    <p class="eyebrow">YOUR COLLECTION</p>
+                    <h2>Manage your events</h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="createEventButton"
+                >
+                    + Create an event
+                </button>
+
+            </div>
+
+
+            <!-- Messages from the organizer JavaScript -->
+            <div
+                class="organizer-message"
+                id="organizerMessage"
+                role="status"
+                aria-live="polite"
+                hidden
+            ></div>
+
+
+            <!-- Create and edit event form -->
+            <section
+                class="organizer-form-panel"
+                id="eventFormPanel"
+                hidden
+                aria-labelledby="eventFormHeading"
+            >
+
+                <div class="organizer-form-heading">
+
+                    <div>
+                        <p class="eyebrow">EVENT DETAILS</p>
+                        <h2 id="eventFormHeading">Create a new event</h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="organizer-close-button"
+                        id="closeEventForm"
+                        aria-label="Close event form"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form id="organizerEventForm">
+
+                    <div class="organizer-form-grid">
+
+                        <div class="form-field organizer-field-full">
+                            <label for="eventTitle">Event title</label>
+
+                            <input
+                                type="text"
+                                id="eventTitle"
+                                name="eventTitle"
+                                placeholder="e.g. Creative Futures Conference"
+                                maxlength="100"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field organizer-field-full">
+                            <label for="eventDescription">Description</label>
+
+                            <textarea
+                                id="eventDescription"
+                                name="eventDescription"
+                                rows="4"
+                                maxlength="1200"
+                                placeholder="Describe what attendees can expect..."
+                                required
+                            ></textarea>
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventCategory">Category</label>
+
+                            <select
+                                id="eventCategory"
+                                name="eventCategory"
+                                required
+                            >
+                                <option value="">Choose a category</option>
+                                <option value="music">Music & Concerts</option>
+                                <option value="arts">Arts & Culture</option>
+                                <option value="business">Business & Networking</option>
+                                <option value="workshops">Workshops & Learning</option>
+                                <option value="food">Food & Lifestyle</option>
+                                <option value="community">Community & Social</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventPrice">Entry price</label>
+
+                            <input
+                                type="text"
+                                id="eventPrice"
+                                name="eventPrice"
+                                maxlength="40"
+                                placeholder="e.g. LKR 2,500 or Free entry"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventDate">Event date</label>
+
+                            <input
+                                type="date"
+                                id="eventDate"
+                                name="eventDate"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventTime">Start time</label>
+
+                            <input
+                                type="time"
+                                id="eventTime"
+                                name="eventTime"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field organizer-field-full">
+                            <label for="eventVenue">Venue</label>
+
+                            <input
+                                type="text"
+                                id="eventVenue"
+                                name="eventVenue"
+                                maxlength="120"
+                                placeholder="Venue or event location"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventCity">City</label>
+
+                            <input
+                                type="text"
+                                id="eventCity"
+                                name="eventCity"
+                                maxlength="80"
+                                placeholder="e.g. Colombo"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventCountry">Country</label>
+
+                            <input
+                                type="text"
+                                id="eventCountry"
+                                name="eventCountry"
+                                maxlength="80"
+                                placeholder="e.g. Sri Lanka"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventLocationType">Event region</label>
+
+                            <select
+                                id="eventLocationType"
+                                name="eventLocationType"
+                                required
+                            >
+                                <option value="sri-lanka">Sri Lanka</option>
+                                <option value="international">International</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-field">
+                            <label for="eventImage">Image URL</label>
+
+                            <input
+                                type="url"
+                                id="eventImage"
+                                name="eventImage"
+                                maxlength="500"
+                                placeholder="https://example.com/image.jpg"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <p class="organizer-form-note">
+                        Use an image URL that you have permission to use.
+                        If you leave the image field empty, a default
+                        EventHub image will be used.
+                    </p>
+
+
+                    <div class="organizer-form-actions">
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="cancelEventForm"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="button button-primary"
+                            id="saveEventButton"
+                        >
+                            Publish event
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- Events created by this manager -->
+            <section class="organizer-events-section">
+
+                <div class="organizer-list-heading">
+                    <div>
+                        <p class="eyebrow">EVENT OVERVIEW</p>
+                        <h3>Your event submissions</h3>
+                    </div>
+
+                    <span id="eventListCount">0 events</span>
+                </div>
+
+
+                <div
+                    class="organizer-event-list"
+                    id="organizerEventList"
+                ></div>
+
+
+                <!-- Shown when the manager has not created an event yet -->
+                <div
+                    class="organizer-empty-state"
+                    id="organizerEmptyState"
+                    hidden
+                >
+
+                    <span class="organizer-empty-mark">+</span>
+
+                    <h3>Your event collection starts here.</h3>
+
+                    <p>
+                        Create your first event to begin building
+                        your organiser dashboard.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="emptyCreateEventButton"
+                    >
+                        Create your first event
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer organizer-footer">
+        <div class="container footer-bottom">
+
+            <p>
+                © <span id="currentYear"></span> EventHub.
+                All rights reserved.
+            </p>
+
+            <p>Discover something worth experiencing.</p>
+
+        </div>
+    </footer>
+
+
+    <!-- Load each JavaScript file only once, in dependency order. -->
+    <script src="js/auth.js" defer></script>
+    <script src="js/events.js" defer></script>
+    <script src="js/organizer.js" defer></script>
+
+</body>
+</html>

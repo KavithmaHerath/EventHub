@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Discover events, explore experiences, and find something worth looking forward to with EventHub."
+    >
+
+    <meta name="theme-color" content="#f7f6f2">
+
+    <title>EventHub — Discover What's Happening</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="brand" aria-label="EventHub homepage">
+                <span class="brand-mark">E</span>
+                <span class="brand-name">event<span>hub</span></span>
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="mainNavigation"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-navigation" id="mainNavigation">
+
+                <a href="#discover" class="nav-link active">
+                    Discover
+                </a>
+
+                <a href="#categories" class="nav-link">
+                    Categories
+                </a>
+
+                <a href="#about" class="nav-link">
+                    About
+                </a>
+
+                <div class="mobile-navigation-actions">
+
+                    <!-- MOBILE LOGIN LINK -->
+                    <a href="auth.html" class="mobile-login-link">
+                        Log in
+                    </a>
+
+                    <a href="#organize" class="button button-primary">
+                        Create an event
+                    </a>
+
+                </div>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <!-- DESKTOP LOGIN LINK -->
+                <a href="auth.html" class="login-link">
+                    Log in
+                </a>
+
+                <a href="#organize" class="button button-primary header-button">
+                    Create an event
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="discover">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        <span class="eyebrow-line"></span>
+                        YOUR NEXT EXPERIENCE STARTS HERE
+                    </div>
+
+                    <h1>
+                        Find your next
+                        <span>great experience.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        From live music and creative workshops to business
+                        meetups and cultural experiences, discover events
+                        that bring people together.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#featured" class="button button-primary hero-button">
+                            Explore events
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                        <a href="#categories" class="text-link">
+                            Browse categories
+                            <span aria-hidden="true">→</span>
+                        </a>
+
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="hero-note-dot"></span>
+                        Discover experiences worth remembering
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="hero-image-wrapper">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1200&q=85"
+                            alt="People enjoying a live outdoor music event"
+                            class="hero-image"
+                        >
+
+                        <div class="image-overlay"></div>
+
+                        <div class="hero-image-caption">
+
+                            <span class="caption-label">
+                                EXPERIENCES THAT CONNECT
+                            </span>
+
+                            <h2>
+                                Make room for
+                                something memorable.
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="floating-note">
+
+                        <span class="floating-note-icon">✳</span>
+
+                        <div>
+                            <strong>Discover more</strong>
+                            <span>Find events around you</span>
+                        </div>
+
+                    </div>
+
+                    <div class="hero-decoration"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DISCOVERY INTRO -->
+        <section class="discovery-strip">
+
+            <div class="discovery-container">
+
+                <div class="discovery-heading">
+                    <span class="section-kicker">THE EVENTHUB EXPERIENCE</span>
+                    <h2>More than just a date on your calendar.</h2>
+                </div>
+
+                <p>
+                    Find new interests, meet like-minded people, and make
+                    meaningful moments happen. Your next experience could
+                    be closer than you think.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES SECTION -->
+        <section class="categories-section section-padding" id="categories">
+
+            <div class="section-container">
+
+                <div class="section-heading-row">
+
+                    <div>
+                        <span class="section-kicker">EXPLORE YOUR INTERESTS</span>
+
+                        <h2 class="section-title">
+                            Something for
+                            <span>everyone.</span>
+                        </h2>
+                    </div>
+
+                    <p class="section-side-description">
+                        Different interests. Different experiences.
+                        One place to discover them.
+                    </p>
+
+                </div>
+
+                <div class="category-grid">
+
+                    <a href="#featured" class="category-item">
+
+                        <div class="category-number">01</div>
+                        <div class="category-icon">♫</div>
+                        <h3>Music & Concerts</h3>
+
+                        <p>
+                            Live performances, festivals, and unforgettable
+                            sounds.
+                        </p>
+
+                        <span class="category-arrow">↗</span>
+
+                    </a>
+
+
+                    <a href="#featured" class="category-item">
+
+                        <div class="category-number">02</div>
+                        <div class="category-icon">✳</div>
+                        <h3>Arts & Culture</h3>
+
+                        <p>
+                            Creative showcases, exhibitions, and cultural
+                            experiences.
+                        </p>
+
+                        <span class="category-arrow">↗</span>
+
+                    </a>
+
+
+                    <a href="#featured" class="category-item">
+
+                        <div class="category-number">03</div>
+                        <div class="category-icon">◎</div>
+                        <h3>Business & Networking</h3>
+
+                        <p>
+                            Professional connections, conferences, and
+                            industry events.
+                        </p>
+
+                        <span class="category-arrow">↗</span>
+
+                    </a>
+
+
+                    <a href="#featured" class="category-item">
+
+                        <div class="category-number">04</div>
+                        <div class="category-icon">◇</div>
+                        <h3>Workshops & Learning</h3>
+
+                        <p>
+                            Develop skills, explore ideas, and learn something
+                            new.
+                        </p>
+
+                        <span class="category-arrow">↗</span>
+
+                    </a>
+
+
+                    <a href="#featured" class="category-item">
+
+                        <div class="category-number">05</div>
+                        <div class="category-icon">⌁</div>
+                        <h3>Food & Lifestyle</h3>
+
+                        <p>
+                            Food experiences, lifestyle gatherings, and
+                            community activities.
+                        </p>
+
+                        <span class="category-arrow">↗</span>
+
+                    </a>
+
+
+                    <a href="#featured" class="category-item">
+
+                        <div class="category-number">06</div>
+                        <div class="category-icon">⌖</div>
+                        <h3>Community & Social</h3>
+
+                        <p>
+                            Meet people, share interests, and connect with
+                            your community.
+                        </p>
+
+                        <span class="category-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED EVENTS & DISCOVERY -->
+        <section class="featured-section section-padding" id="featured">
+
+            <div class="section-container">
+
+                <div class="featured-heading">
+
+                    <div>
+                        <span class="section-kicker">FIND YOUR NEXT EXPERIENCE</span>
+
+                        <h2 class="section-title">
+                            Events worth
+                            <span>showing up for.</span>
+                        </h2>
+                    </div>
+
+                    <span class="coming-soon-label">
+                        EVENT DISCOVERY
+                    </span>
+
+                </div>
+
+
+                <!-- EVENT SEARCH AND FILTERS -->
+                <div class="event-search-panel">
+
+                    <div class="search-field">
+
+                        <label for="eventSearch">Search events</label>
+
+                        <div class="search-input-wrapper">
+
+                            <span class="search-icon" aria-hidden="true">⌕</span>
+
+                            <input
+                                type="search"
+                                id="eventSearch"
+                                placeholder="Search by event, venue or keyword..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="categoryFilter">Category</label>
+
+                        <select id="categoryFilter">
+
+                            <option value="all">All categories</option>
+                            <option value="music">Music & Concerts</option>
+                            <option value="arts">Arts & Culture</option>
+                            <option value="business">Business & Networking</option>
+                            <option value="workshops">Workshops & Learning</option>
+                            <option value="food">Food & Lifestyle</option>
+                            <option value="community">Community & Social</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="locationFilter">Location</label>
+
+                        <select id="locationFilter">
+
+                            <option value="all">All locations</option>
+                            <option value="sri-lanka">Sri Lanka</option>
+                            <option value="international">International</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-field">
+
+                        <label for="sortFilter">Sort by</label>
+
+                        <select id="sortFilter">
+
+                            <option value="date-asc">Upcoming first</option>
+                            <option value="date-desc">Latest first</option>
+                            <option value="title-asc">Event name</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULTS SUMMARY -->
+                <div class="results-toolbar">
+
+                    <p id="resultsCount" aria-live="polite">
+                        Loading events...
+                    </p>
+
+                    <button
+                        type="button"
+                        class="clear-filters-button"
+                        id="clearFilters"
+                    >
+                        Clear filters
+                        <span aria-hidden="true">↺</span>
+                    </button>
+
+                </div>
+
+
+                <!-- DYNAMIC EVENT CARDS -->
+                <div
+                    class="event-grid"
+                    id="eventGrid"
+                    aria-live="polite"
+                >
+                    <!-- Event cards are generated by js/app.js -->
+                </div>
+
+
+                <!-- EMPTY SEARCH RESULTS -->
+                <div class="events-empty-state" id="noEventsMessage" hidden>
+
+                    <div class="empty-state-symbol">⌕</div>
+
+                    <h3>No events found.</h3>
+
+                    <p>
+                        Try changing your search or filters to discover
+                        other experiences.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="resetSearch"
+                    >
+                        Show all events
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section section-padding" id="about">
+
+            <div class="section-container about-container">
+
+                <div class="about-visual">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85"
+                        alt="Friends spending time together at a social gathering"
+                        loading="lazy"
+                    >
+
+                    <div class="about-image-label">
+                        <span>GOOD PEOPLE.</span>
+                        <span>GREAT EXPERIENCES.</span>
+                    </div>
+
+                </div>
+
+                <div class="about-content">
+
+                    <span class="section-kicker">WHY EVENTHUB?</span>
+
+                    <h2 class="section-title">
+                        Bringing people
+                        <span>closer together.</span>
+                    </h2>
+
+                    <p>
+                        Finding the right event shouldn't be complicated.
+                        EventHub aims to make discovering, exploring, and
+                        connecting with experiences easier.
+                    </p>
+
+                    <p>
+                        Whether you're looking for inspiration, professional
+                        opportunities, or something enjoyable to do, there's
+                        always something new to explore.
+                    </p>
+
+                    <a href="#featured" class="text-link">
+                        Start exploring
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORGANIZER CTA -->
+        <section class="organizer-section" id="organize">
+
+            <div class="organizer-container">
+
+                <div class="organizer-content">
+
+                    <span class="section-kicker light-kicker">
+                        FOR EVENT ORGANIZERS
+                    </span>
+
+                    <h2>
+                        Have something
+                        worth bringing
+                        people together for?
+                    </h2>
+
+                    <p>
+                        EventHub is designed to help organizers showcase
+                        experiences and connect with people who want to
+                        participate.
+                    </p>
+
+                    <a href="auth.html" class="button button-light">
+                        Get started
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+
+                <div class="organizer-decoration" aria-hidden="true">
+                    <span>EVENTS</span>
+                    <span>IDEAS</span>
+                    <span>PEOPLE</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand-column">
+
+                    <a href="index.html" class="brand footer-brand">
+                        <span class="brand-mark">E</span>
+                        <span class="brand-name">event<span>hub</span></span>
+                    </a>
+
+                    <p>
+                        Discover experiences.
+                        Connect with people.
+                        Make moments matter.
+                    </p>
+
+                </div>
+
+                <div class="footer-link-column">
+
+                    <h3>Explore</h3>
+
+                    <a href="#discover">Discover events</a>
+                    <a href="#categories">Categories</a>
+                    <a href="#featured">Featured events</a>
+
+                </div>
+
+                <div class="footer-link-column">
+
+                    <h3>EventHub</h3>
+
+                    <a href="#about">About us</a>
+                    <a href="#organize">For organizers</a>
+                    <a href="auth.html">Log in</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear"></span> EventHub.
+                    All rights reserved.
+                </p>
+
+                <p class="footer-tagline">
+                    Made for experiences that matter.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/storage.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/notifications.js"></script>
+
+</body>
+</html>

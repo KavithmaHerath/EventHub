@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Register for an event with EventHub."
+    >
+
+    <meta name="theme-color" content="#f7f6f2">
+
+    <title>Event Registration — EventHub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="registration-page">
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand" aria-label="EventHub homepage">
+                <span class="brand-mark">E</span>
+                <span class="brand-name">event<span>hub</span></span>
+            </a>
+
+            <nav class="main-navigation registration-navigation">
+                <a href="index.html" class="nav-link">Discover events</a>
+                <a href="account.html" class="nav-link">My account</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="index.html" class="login-link">Back to events</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="registration-main">
+
+        <div class="registration-container">
+
+            <div class="registration-heading">
+                <span class="section-kicker">EVENTHUB REGISTRATION</span>
+
+                <h1>
+                    Reserve your
+                    <span>place.</span>
+                </h1>
+
+                <p>
+                    Complete the details below to register for this event.
+                </p>
+            </div>
+
+
+            <div class="registration-layout">
+
+                <!-- EVENT INFORMATION -->
+
+                <aside class="registration-event-card">
+
+                    <div class="registration-event-image" id="registrationEventImage">
+                        <span>EVENTHUB</span>
+                    </div>
+
+                    <div class="registration-event-content">
+
+                        <span class="registration-card-label">
+                            YOUR SELECTED EVENT
+                        </span>
+
+                        <h2 id="registrationEventTitle">
+                            Loading event...
+                        </h2>
+
+                        <p id="registrationEventCategory">
+                            Event category
+                        </p>
+
+                        <div class="registration-event-details">
+
+                            <div class="registration-detail">
+                                <span class="detail-symbol">◷</span>
+
+                                <div>
+                                    <small>Date & time</small>
+                                    <strong id="registrationEventDate">
+                                        Loading...
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="registration-detail">
+                                <span class="detail-symbol">⌖</span>
+
+                                <div>
+                                    <small>Location</small>
+                                    <strong id="registrationEventLocation">
+                                        Loading...
+                                    </strong>
+                                </div>
+                            </div>
+
+                            <div class="registration-detail">
+                                <span class="detail-symbol">◇</span>
+
+                                <div>
+                                    <small>Listed price</small>
+                                    <strong id="registrationEventPrice">
+                                        Loading...
+                                    </strong>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- REGISTRATION FORM -->
+
+                <section class="registration-form-card" id="registrationFormSection">
+
+                    <div class="registration-form-heading">
+                        <span class="section-kicker">REGISTRATION DETAILS</span>
+                        <h2>Attendee information</h2>
+
+                        <p>
+                            Enter the details associated with your EventHub account.
+                        </p>
+                    </div>
+
+
+                    <div class="registration-notice">
+                        <strong>Prototype registration</strong>
+
+                        <p>
+                            This demonstration stores registrations in your
+                            browser only. It does not issue real tickets,
+                            confirm venue availability, or process payments.
+                        </p>
+                    </div>
+
+
+                    <div id="registrationMessage" class="registration-message" role="status" aria-live="polite" hidden></div>
+
+
+                    <form id="eventRegistrationForm" novalidate>
+
+                        <div class="registration-input-group">
+
+                            <label for="attendeeName">Full name</label>
+
+                            <input
+                                type="text"
+                                id="attendeeName"
+                                name="attendeeName"
+                                placeholder="Enter your full name"
+                                maxlength="80"
+                                autocomplete="name"
+                                required
+                            >
+
+                            <small class="registration-field-error" id="attendeeNameError"></small>
+
+                        </div>
+
+
+                        <div class="registration-input-group">
+
+                            <label for="attendeeEmail">Email address</label>
+
+                            <input
+                                type="email"
+                                id="attendeeEmail"
+                                name="attendeeEmail"
+                                placeholder="you@example.com"
+                                maxlength="120"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <small class="registration-field-error" id="attendeeEmailError"></small>
+
+                        </div>
+
+
+                        <div class="registration-input-group">
+
+                            <label for="attendeeNote">
+                                Note to organizer
+                                <span class="optional-label">Optional</span>
+                            </label>
+
+                            <textarea
+                                id="attendeeNote"
+                                name="attendeeNote"
+                                rows="4"
+                                maxlength="300"
+                                placeholder="Anything you'd like the organizer to know?"
+                            ></textarea>
+
+                            <small class="registration-character-count">
+                                Maximum 300 characters
+                            </small>
+
+                        </div>
+
+
+                        <label class="registration-consent">
+                            <input
+                                type="checkbox"
+                                id="registrationConsent"
+                                required
+                            >
+
+                            <span>
+                                I understand that this is a demonstration
+                                registration and not a confirmed real-world booking.
+                            </span>
+                        </label>
+
+                        <small class="registration-field-error" id="consentError"></small>
+
+
+                        <button
+                            type="submit"
+                            class="button button-primary registration-submit"
+                            id="registrationSubmit"
+                        >
+                            Complete registration
+                            <span aria-hidden="true">↗</span>
+                        </button>
+
+                        <a href="index.html" class="registration-back-link">
+                            Cancel and return to events
+                        </a>
+
+                    </form>
+
+                </section>
+
+
+                <!-- CONFIRMATION -->
+
+                <section
+                    class="registration-success"
+                    id="registrationSuccess"
+                    hidden
+                    aria-live="polite"
+                >
+
+                    <div class="success-symbol">✓</div>
+
+                    <span class="section-kicker">REGISTRATION SAVED</span>
+
+                    <h2>You're on the list.</h2>
+
+                    <p id="registrationSuccessText">
+                        Your demonstration registration has been saved.
+                    </p>
+
+                    <div class="confirmation-reference">
+                        <span>Registration reference</span>
+                        <strong id="registrationReference">—</strong>
+                    </div>
+
+                    <div class="registration-success-actions">
+                        <a href="registration.html?view=history" class="button button-primary">
+                            View my registrations
+                        </a>
+
+                        <a href="index.html" class="registration-back-link">
+                            Explore more events
+                        </a>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-bottom">
+                <p>
+                    © <span id="currentYear"></span> EventHub.
+                    All rights reserved.
+                </p>
+
+                <p class="footer-tagline">
+                    Made for experiences that matter.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+
+<script src="js/storage.js"></script>
+<script src="js/events.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/registration.js"></script>
+
+</body>
+</html>

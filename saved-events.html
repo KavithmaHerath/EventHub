@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="View and manage your saved events on EventHub."
+    >
+
+    <meta name="theme-color" content="#f7f6f2">
+
+    <title>Saved Events | EventHub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="saved-events-page">
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand" aria-label="EventHub homepage">
+                <span class="brand-mark">E</span>
+                <span class="brand-name">event<span>hub</span></span>
+            </a>
+
+            <nav class="saved-events-navigation" aria-label="Main navigation">
+                <a href="index.html#featured" class="nav-link">
+                    Discover events
+                </a>
+
+                <a href="account.html" class="nav-link">
+                    My account
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="saved-events-main">
+
+        <section class="saved-events-hero">
+            <div class="section-container">
+
+                <a href="account.html" class="saved-events-back-link">
+                    <span aria-hidden="true">←</span>
+                    Back to my account
+                </a>
+
+                <span class="section-kicker">YOUR PERSONAL COLLECTION</span>
+
+                <h1>Events worth <em>remembering.</em></h1>
+
+                <p>
+                    Keep the experiences that interest you in one place.
+                    Your saved events will be ready whenever you are.
+                </p>
+
+                <span
+                    class="saved-events-count"
+                    id="savedEventsCount"
+                    aria-live="polite"
+                >
+                    0 saved events
+                </span>
+
+            </div>
+        </section>
+
+        <section class="saved-events-section">
+            <div class="section-container">
+
+                <div
+                    class="saved-events-grid"
+                    id="savedEventsGrid"
+                    aria-live="polite"
+                ></div>
+
+                <div
+                    class="saved-events-empty"
+                    id="savedEventsEmpty"
+                    hidden
+                >
+                    <span class="saved-events-empty-symbol" aria-hidden="true">
+                        ♡
+                    </span>
+
+                    <span class="section-kicker">A LITTLE SPACE TO FILL</span>
+
+                    <h2>Your collection starts here.</h2>
+
+                    <p>
+                        You haven't saved any events yet. Explore EventHub
+                        and bookmark the experiences you would like to revisit.
+                    </p>
+
+                    <a
+                        href="index.html#featured"
+                        class="button button-primary"
+                    >
+                        Discover events
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <div
+                    class="saved-events-signed-out"
+                    id="savedEventsSignedOut"
+                    hidden
+                >
+                    <span class="section-kicker">YOUR EVENTHUB COLLECTION</span>
+
+                    <h2>Sign in to see your saved events.</h2>
+
+                    <p>
+                        Your saved collection is connected to your EventHub
+                        demo account.
+                    </p>
+
+                    <a href="auth.html" class="button button-primary">
+                        Sign in
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <p
+                    class="wishlist-message"
+                    id="wishlistMessage"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-bottom">
+                <p>
+                    © <span id="currentYear"></span> EventHub.
+                    All rights reserved.
+                </p>
+
+                <p class="footer-tagline">
+                    Made for experiences that matter.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="js/events.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/notifications.js"></script>
+
+    <script>
+        const currentYear = document.getElementById("currentYear");
+
+        if (currentYear) {
+            currentYear.textContent = new Date().getFullYear();
+        }
+    </script>
+
+</body>
+</html>
