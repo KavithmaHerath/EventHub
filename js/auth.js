@@ -17,8 +17,8 @@
     const SESSION_KEY = "eventhub_demo_session";
 
     // Demo administrator account.
-    const ADMIN_EMAIL = "amanda33herath@gmail.com";
-    const ADMIN_PASSWORD = "Admin@12345";
+    const ADMIN_EMAIL = "Email";
+    const ADMIN_PASSWORD = "Password";
 
     const $ = id => document.getElementById(id);
 
