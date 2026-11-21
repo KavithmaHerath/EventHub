@@ -1,7 +1,7 @@
 # 🎟️ EventHub – Smart Event Management & Discovery Platform
 
 <p align="center">
-  <img src="images/eventhub.png" alt="EventHub Preview" width="100%">
+  <img src="images/eventhub.png" alt="EventHub Application Preview" width="100%">
 </p>
 
 <p align="center">
@@ -10,54 +10,103 @@
 
 ## 📌 Overview
 
-EventHub is a frontend-based platform for event discovery and management. It provides dedicated functionality for visitors, event managers, and administrators.
+EventHub is a frontend-based event discovery and management platform that connects visitors, event managers, and administrators through a centralized application.
 
-## ✨ Key Features
+Visitors can explore events, prospective event managers can apply for approval, approved managers can manage event listings, and administrators can review applications and moderate events.
 
-- 🔎 **Event Discovery** – Browse events and view event details.
-- 🧑‍💼 **Manager Registration** – Apply for event manager access.
-- 📋 **Event Management** – Create, edit, view, and delete event listings.
-- 🛡️ **Admin Dashboard** – Approve managers and moderate events.
-- 📊 **Analytics** – View event statistics and platform activity.
+The project uses HTML, CSS, and JavaScript, with browser storage to simulate application data and user sessions.
 
-## 🛠️ Technologies
+## ✨ Features
+
+### 🔎 Event Discovery
+- Browse available events.
+- View event information and details.
+- Explore events without creating an account.
+
+### 🧑‍💼 Event Manager Registration
+- Submit an application to become an event manager.
+- Wait for administrator approval.
+- Access management features after approval.
+
+### 📋 Event Management
+- Add new event listings.
+- View and edit submitted events.
+- Delete event listings.
+
+### 🛡️ Administrator Dashboard
+- Review event manager applications.
+- Approve or reject applications.
+- View manager information.
+- Review and moderate event listings.
+
+### 📊 Analytics Dashboard
+- View event statistics.
+- Monitor event approval statuses.
+- Explore event category distribution.
+- Review organizer activity and platform data.
+
+## 🛠️ Technologies Used
 
 | Technology | Purpose |
 |---|---|
-| HTML | Structure |
-| CSS | Styling |
-| JavaScript | Functionality |
-| Git & GitHub | Version control |
-| Visual Studio Code | Development |
+| HTML | Page structure |
+| CSS | Styling and layouts |
+| JavaScript | Application functionality |
+| Git | Version control |
+| GitHub | Source code hosting |
+| Visual Studio Code | Development environment |
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
-EventHub uses a client-side architecture with JavaScript and browser storage.
+EventHub uses a client-side architecture.
 
 ```text
-Visitors ───────> Event Discovery
-Managers ───────> Event Management
-Administrators ─> Application Approval
-                         |
-                         v
-                  JavaScript Logic
-                         |
-                         v
-                  Browser Storage
+              EVENTHUB
+                 |
+       +---------+----------+
+       |         |          |
+       v         v          v
+   VISITORS   MANAGERS   ADMINISTRATORS
+       |         |          |
+       v         v          v
+   EVENT      EVENT      APPLICATION
+ DISCOVERY  MANAGEMENT   APPROVAL
+                 |          |
+                 +-----+----+
+                       |
+                       v
+                JAVASCRIPT LOGIC
+                       |
+                       v
+                BROWSER STORAGE
+                 localStorage
+                sessionStorage
 ```
+
+The application uses JavaScript to manage user interactions, event operations, and role-based workflows. Data is stored in the browser for demonstration purposes.
 
 ## 👥 User Roles
 
-| Role | Access |
+| Role | Responsibilities |
 |---|---|
-| Visitor | Discover events |
-| Event Manager | Manage event listings after approval |
-| Administrator | Manage applications and events |
+| Visitor | Browse and discover events |
+| Event Manager | Apply for approval and manage events |
+| Administrator | Review applications and moderate events |
+
+### 🔄 Event Manager Approval Workflow
+
+1. A prospective manager submits an application.
+2. The application is stored in browser storage.
+3. The administrator reviews the application.
+4. The administrator approves or rejects it.
+5. Approved managers can access the manager dashboard.
+6. Approved managers can manage their event listings.
 
 ## 📂 Project Structure
 
 ```text
 EventHub/
+│
 ├── index.html
 ├── account.html
 ├── admin.html
@@ -67,8 +116,10 @@ EventHub/
 ├── organizer.html
 ├── registration.html
 ├── saved-events.html
+│
 ├── css/
 │   └── style.css
+│
 ├── js/
 │   ├── admin.js
 │   ├── analytics.js
@@ -82,48 +133,89 @@ EventHub/
 │   ├── reviews.js
 │   ├── storage.js
 │   └── wishlist.js
+│
 ├── images/
 │   ├── eventhub.png
 │   └── hero-event.jpg
+│
+├── .gitignore
 └── README.md
 ```
 
-## ⚙️ Installation
+## ⚙️ Installation and Setup
 
-**1. Clone the repository**
+### 📋 Prerequisites
+
+- A modern web browser.
+- Visual Studio Code or another code editor.
+- Git installed on your computer.
+
+### 1. 📥 Clone the Repository
 
 ```bash
 git clone https://github.com/KavithmaHerath/EventHub.git
 ```
 
-**2. Open the project**
+### 2. 📁 Navigate to the Project
 
 ```bash
 cd EventHub
+```
+
+### 3. 💻 Open in Visual Studio Code
+
+```bash
 code .
 ```
 
-**3. Run the application**
+### 4. ▶️ Run the Application
 
-Open `index.html` in a browser or use the VS Code Live Server extension.
+Open `index.html` in your browser.
+
+Alternatively, use the **Live Server** extension in Visual Studio Code:
+
+1. Install Live Server.
+2. Open `index.html`.
+3. Right-click inside the editor.
+4. Select **Open with Live Server**.
 
 ## 💾 Data Storage
 
-- `localStorage` – Stores demonstration account and event data.
-- `sessionStorage` – Maintains browser session information.
+EventHub uses browser storage to simulate application data.
+
+| Storage | Purpose |
+|---|---|
+| localStorage | Store demonstration account and event data |
+| sessionStorage | Maintain the current browser session |
+
+Data is stored locally and is not synchronized between users or devices. Clearing browser storage may remove saved demonstration data.
+
+## 🎯 Project Objectives
+
+- Provide a centralized event discovery platform.
+- Simplify event manager registration and approval.
+- Support event creation and management.
+- Allow administrators to moderate event listings.
+- Demonstrate role-based workflows using JavaScript.
 
 ## 🚀 Future Enhancements
 
-- Backend and database integration.
-- Secure authentication and authorization.
+- Backend API integration.
+- Secure server-side authentication and authorization.
+- Database integration.
+- Cloud-based image storage.
 - Advanced event search and filtering.
-- Cloud image storage.
-- Enhanced analytics.
+- Enhanced analytics and reporting.
+- Production deployment.
 
-## ⚠️ Project Limitations
+## ⚠️ Limitations
 
-EventHub is a frontend demonstration project. It does not currently use a backend server or external database. Browser storage is used for demonstration data and is not suitable for production authentication or sensitive information.
+EventHub is a frontend demonstration project. It does not currently use a backend server or external database.
+
+Authentication and application data are handled using browser storage. This implementation is not suitable for production authentication or storing sensitive information.
 
 ## 👩‍💻 Author
 
 **Kavithma Herath**
+
+**EventHub – Smart Event Management & Discovery Platform**
